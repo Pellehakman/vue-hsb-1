@@ -3,7 +3,7 @@
 </script>
 
 <template>
-   <form action="">
+   <form>
             <div class="input-container">
                 <label for="username">Username</label>
                 <input type="text" name="username" v-model="username">
@@ -13,7 +13,7 @@
                 <input type="password" name="password" v-model="password">
             </div>
             
-            <input type="button" value="Login" @click="handleSubmit" />
+            <input type="button" value="Login" @submit.prevent="handleSubmit()"/>
         </form>
  
 </template>
