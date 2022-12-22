@@ -9,39 +9,23 @@ export const useBookingStore = defineStore('storeId',  {
     
      
     }),
-    getters: {
-      displayValue: (state) => {
-          return state;
-      }
+  
       
-  },
+
      
    
   // från calender.ts submit() där en action finns som heter "additem"
   // skicka sen upp till state
     actions: {
+
       addItem(credentials: Object){
         console.log(credentials)
         this.rawItems.push(credentials)
-       
-        
-      }
+      },
+      
   
     }
     
   
    
   })
-
-// export const useBookingStore = defineStore('bookingstore', () => {
-//   const bananas = ref(0);
-
-
-
-//   function addItem() {
-//      console.log('hej')
-//   }
-  
-//   return { bananas, addItem }
-
-// })
