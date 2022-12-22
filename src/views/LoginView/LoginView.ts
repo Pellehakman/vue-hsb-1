@@ -8,20 +8,28 @@ export default defineComponent({
         
     setup(){
         const bookingStore = useBookingStore();
-        const { bananas } = storeToRefs(bookingStore);
+        const { rawItems } = storeToRefs(bookingStore);
         
         const username = ref('')
         const password = ref('')
         
 
-        async function handleSubmit(){
-            
-            const credentials = {
-                username: username.value,
-                password: password.value
+         function handleSubmit(){
+            if( username.value.length < 0){
+                return
+            } else{
+                const credentials = {
+                    username: username.value,
+                    password: password.value
+                }
+                bookingStore.addItem(credentials)
             }
-            bookingStore.addItem(credentials)
+           
+              
             
+          
+               
+               
      
         
     }
@@ -31,7 +39,7 @@ export default defineComponent({
             username,
             password,
             handleSubmit,
-            bananas
+            rawItems
             
         }
     }
